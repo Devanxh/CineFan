@@ -4,6 +4,7 @@
   box-sizing : border-box;
 }
 
+
 body {
   font-family : "montserrat", sans-serif;
   background-color : #223343;
@@ -35,6 +36,7 @@ section {
   width : 100%;
   padding: 15px;
 
+
   border : none;
 
   background-color: white;
@@ -59,7 +61,7 @@ section {
 
 }
 
-.results .result {
+.results .card {
   width : 33.33%;
   min-width: 250px;
   padding : 15px;
@@ -68,12 +70,12 @@ section {
   cursor : pointer;
 }
 
-.results .result img {
+.results .card img {
   display: block;
   width : 100%;
 }
 
-.results .result h4 {
+.results .card h4 {
   color : #fff;
   font-size : 20px;
   font-weight : 500;
@@ -83,8 +85,8 @@ section {
   transition: 0.3s ease-out;
 }
 
-.results .result:hover h4{
-  background: #fff;
+.results .card:hover h4{
+  background: rgb(197, 190, 190);
   color : #223343;
 }
 
@@ -160,3 +162,24 @@ section {
 .popup .content .close:hover {
   background: darkgrey;
 }
+
+.sort{
+  display: flex;
+
+  border-radius: 10px;
+  justify-content: center;
+  justify-content: space-between;
+  padding : 15px 30px;
+  margin-right : 15px;
+  margin-top : 8px;
+  font-size: 18px;
+  font-weight : 700;
+
+}
+
+.sortB:hover {
+  background: darkgrey;
+}
+.sortB:focus {
+  box-shadow: 0 0 4px 2px lightblue;
+}	

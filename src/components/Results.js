@@ -1,16 +1,21 @@
 import React from 'react'
-import Result from './Result'
+import Card from './Card'
 
 function Results({ results, openPopup }) {
 if(results){
   return (
         <section className="results">
-        
             {results.map(result => (
-                <Result key={result.imdbID} result={result} openPopup={openPopup}/>
+                <Card key={result.imdbID} result={result} openPopup={openPopup}/>
         
             ))}
         </section>
+        )
+    }else{
+        return (
+            <section className="result">
+            <h2 >No movies available with the given name :(</h2>
+            </section>
         )
     }
 }

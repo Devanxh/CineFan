@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Result({ result, openPopup }) {
+function Card({ result, openPopup }) {
   return (
-    <div className='result' onClick={() => openPopup(result.Title)}>
+    <div className='card' onClick={() => openPopup(result.Title)}>
         <img src={result.Poster} />
         <h4>{result.Title} ({result.Year})</h4>
 
@@ -10,4 +10,4 @@ function Result({ result, openPopup }) {
   )
 }
 
-export default Result
+export default Card

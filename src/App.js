@@ -11,7 +11,7 @@ function App() {
     results: [],
     selected : {}
   });
-  const apiurl = "http://www.omdbapi.com/?i=tt3896198&apikey=57a9d72d";
+  const apiurl = process.env.REACT_APP_API_KEY;
 
 
   const search = (e) => {
@@ -49,6 +49,55 @@ function App() {
     });
   }
 
+
+  const sortByYear = ()=> {
+
+    let temp = state.results;
+    const hyp = "–";
+    sortByAlphRev();
+    temp.sort((a,b) => {
+      if(a.Year.includes(hyp) || b.Year.includes(hyp)){
+        return a.Year.substring(1,4) - b.Year.substring(1,4);
+      }
+      return a.Year - b.Year;
+    });
+    console.log(temp);
+    setState(prevState => {
+      return { ...prevState, result: temp }
+    });
+  }
+
+  const sortByAlph = ()=> {
+
+    let temp = state.results;
+    temp.sort((a,b) => {
+      return a.Title.localeCompare(b.Title);
+    });
+    console.log(temp);
+    setState(prevState => {
+      return { ...prevState, result: temp }
+    });
+  }
+
+  const sortByAlphRev = ()=> {
+
+    let temp = state.results;
+    temp.sort((a,b) => {
+      return b.Title.localeCompare(a.Title);
+    });
+    console.log(temp);
+    setState(prevState1 => {
+      return { ...prevState1, result: temp }
+    });
+  }
+  //Sorting the results
+
+  // const sorting = (e) =>{
+  //   let userSortValue = document.getElementById("sort");
+  //   let sortValue = userSortValue.options[userSortValue.selectedIndex].value;
+  //   return sortValue;
+  // }
+
   const exitPopup = () => {
     setState(prevState => {
       return { ...prevState, selected: {} }
@@ -61,9 +110,9 @@ function App() {
         <h1>CineFans</h1>
       </header>
       <main>
-        <Search handleInput={handleInput} search={search}/>
+        <Search handleInput={handleInput} search={search} sortByYear={sortByYear} sortByAlph={sortByAlph} sortByAlphRev={sortByAlphRev}/>
 
-        <Results results={state.results} openPopup={openPopup}/>
+        <Results results={state.results} openPopup={openPopup} />
 
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} exitPopup={exitPopup} /> : false}
 
