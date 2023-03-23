@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CineFan/static/css/main.f83ece63.css",
+    "main.js": "/CineFan/static/js/main.65acd0fc.js",
+    "index.html": "/CineFan/index.html",
+    "main.f83ece63.css.map": "/CineFan/static/css/main.f83ece63.css.map",
+    "main.65acd0fc.js.map": "/CineFan/static/js/main.65acd0fc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f83ece63.css",
+    "static/js/main.65acd0fc.js"
+  ]
+}
