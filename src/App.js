@@ -12,7 +12,7 @@ function App() {
     results: [],
     selected : {}
   });
-  const apiurl = process.env.REACT_APP_API_KEY;
+  const apiurl = process.env.REACT_APP_API_KEY || 'http://www.omdbapi.com/?i=tt3896198&apikey=57a9d72d';
 
 
   const search = (e) => {
