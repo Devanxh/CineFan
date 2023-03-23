@@ -7,7 +7,6 @@ if(results){
         <section className="results">
             {results.map(result => (
                 <Card key={result.imdbID} result={result} openPopup={openPopup}/>
-        
             ))}
         </section>
         )

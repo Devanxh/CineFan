@@ -5,6 +5,7 @@ import Search from './components/Search';
 import Results from './components/Results';
 import Popup from "./components/Popup";
 
+
 function App() {
   const [state, setState] = useState({
     sQuery: "",
@@ -38,8 +39,8 @@ function App() {
     // console.log(state.sQuery);
   }
 
-  const openPopup = title => {
-    axios(apiurl + "&t=" + title).then(({data}) => {
+  const openPopup = (title,year) => {
+    axios(apiurl + "&t=" + title + "&y=" + year).then(({data}) => {
       let result = data;
       // console.log(result);
       // console.log(result.id);
@@ -61,11 +62,14 @@ function App() {
       }
       return a.Year - b.Year;
     });
-    console.log(temp);
+    // let min = temp[0].Year;
+    // let max = temp[temp.length-1].Year;
+    // console.log(temp, min, max);
     setState(prevState => {
       return { ...prevState, result: temp }
     });
   }
+
 
   const sortByAlph = ()=> {
 
@@ -111,7 +115,7 @@ function App() {
       </header>
       <main>
         <Search handleInput={handleInput} search={search} sortByYear={sortByYear} sortByAlph={sortByAlph} sortByAlphRev={sortByAlphRev}/>
-
+        {/* <Filter min={sortByYear.min} max={sortByYear.max} year={} /> */}
         <Results results={state.results} openPopup={openPopup} />
 
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} exitPopup={exitPopup} /> : false}

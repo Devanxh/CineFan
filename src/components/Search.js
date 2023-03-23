@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Search({ handleInput, search, sortByYear, sortByAlph, sortByAlphRev}) {
+function Search({ handleInput, search, sortByYear, sortByAlph, sortByAlphRev }) {
   return (
     <section className="searchbox-area" >
         <input 
@@ -15,16 +15,6 @@ function Search({ handleInput, search, sortByYear, sortByAlph, sortByAlphRev}) {
       <button className="close sort sortB" onClick={sortByAlph}>A-Z</button>
       <button className="close sort sortB" onClick={sortByAlphRev}>Z-A</button>
       </div>
-        {/* <form action="#">
-          <label htmlFor="sort"></label>
-            <select >            
-            <option value="lowest" onClick={sortByRating}>Rating</option>
-            
-            <option value="highest">Price (highest)</option>
-            <option value="a-z">Price (A-Z)</option>
-            <option value="z-a">Price (Z-A)</option>
-            </select>
-        </form> */}
     </section>
   )
 }
